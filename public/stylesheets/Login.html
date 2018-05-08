@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="../controllers/logincontroller.js"></script>
+  <link rel="stylesheet" href="style.css">
+<body data-ng-app="myapp" data-ng-controller="MainCtrl">
+<form>
+      
+        <h1>Login</h1>
+        
+        <fieldset>
+         
+            <label for="Email">Email</label><br>
+            <input type="email" name="Email" data-ng-model="email" required />
+            <span data-ng-show="form.Email.$dirty && form.Email.$error.required" ></span>
+          
+          
+          
+          <label for="password">Password</label><br>
+            <input type="password" name="password" data-ng-model="password" required />
+            <span data-ng-show="form.password.$dirty && form.password.$error.required" ></span>
+          
+         
+        </fieldset>
+        
+        
+        <button type="submit"  data-ng-disabled="form.$invalid" data-ng-click="checks();">Login</button>
+         
+      </form>
+      
+    </body></html>

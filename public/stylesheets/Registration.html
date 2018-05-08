@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js></script>
+
+
+
+
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+
+
+<script src="../controllers/regcontroller.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body data-ng-app="myapp" data-ng-controller="MainCtrl" >
+
+
+      <form name="form">
+      
+        <h1>Registration Form</h1>
+        
+        <fieldset>
+        
+          <legend><span class="number">1</span>Your basic info</legend>
+          
+          <label for="FirstName">First Name</label><br>
+            <input type="text" name="FirstName" id="firstname" data-ng-model="firstname" required />
+            <span data-ng-show="form.FirstName.$dirty && form.FirstName.$error.required" ></span>
+            
+          <label for="LastName">Last Name</label><br>
+            <input type="text" name="LastName" data-ng-model="lastname" required />
+            <span data-ng-show="form.LastName.$dirty && form.LastName.$error.required" ></span>
+            
+            <label for="Email">Email</label><br>
+            <input type="email" name="Email" data-ng-model="email" required />
+            <span data-ng-show="form.Email.$dirty && form.Email.$error.required" ></span>
+          
+          <label for="Contact">Contact</label><br>
+            <input type="number" name="Contact" data-ng-model="contact" required />
+            <span data-ng-show="form.Contact.$dirty && form.Contact.$error.required" ></span>
+          
+          <label for="password">Password</label><br>
+            <input type="password" name="password" data-ng-model="password" required />
+            <span data-ng-show="form.password.$dirty && form.password.$error.required" ></span>
+          
+         
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Project Details</legend>
+          <label for="Availability">Availability</label><br>
+            <input type="radio" data-ng-model="availability" value="Weekdays">Weekdays
+            <input type="radio" data-ng-model="availability" value="Weekends">Weekends
+            <span data-ng-show="form.availability.$dirty && form.availability.$error.required" ></span>
+        </fieldset>
+        <fieldset>
+     
+          <label for="Select Days">Select Days</label><br>
+        	<select data-ng-model="days">
+        	<optgroup label="Days">
+			<option value=""></option>
+			<option value="Monday">Monday</option>
+			<option value="Tuesday">Tuesday</option>
+    		<option value="Wednesday">Wednesday</option>
+			<option value="Thursday">Thursday</option>
+			<option value="Friday">Friday</option>
+			<option value="Saturdday">Saturday</option>
+			<option value="Sunday">Sunday</option></select>
+			</optgroup>
+          <label for="Interest">Interest</label><br>
+            <input name="Interest" data-ng-model="interest" type="text" required></input>
+            <span data-ng-show="form.Interest.$dirty && form.Interest.$error.required" ></span>
+        </fieldset>
+        <button type="submit"  data-ng-disabled="form.$invalid" data-ng-click="sendData();">Register</button>
+         
+      </form>
+      
+    </body>
+     	
+    
+
+
+</html>
+
+

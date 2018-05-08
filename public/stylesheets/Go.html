@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{
+background-image:url("maker.jpg");
+background-repeat: no-repeat;
+background-size:1000px 600px;
+background-position: top right;
+}
+
+
+</style>
+</head>
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+var app = angular.module("myapp1", []);
+
+app.controller('MainCtrl1', function($scope,$window,$location,$http) {
+
+	$scope.checks = function() {
+		  var data = {
+				discuss=$scope.discuss
+				  
+		  }
+		  $http.post('/getdata',data).then(
+				  function(response){
+					 
+					 
+				  },
+				  function(){
+					  alert("failed")
+				  }) ;
+	}
+
+	
+			  
+		
+	}
+
+	});
+
+
+</script>
+
+		 
+<body>
+
+<div ng-app="">
+  <form>
+  	  <h1>You entered: {{discuss}}</h1>
+  	 
+     <textarea ng-model="discuss" rows="8" cols="45"></textarea><br>
+     <button type="submit"  data-ng-click="checks()">Send</button>
+  </form>
+
+</div>
+
+
+</body>
+</html>
+
+</body>
+</html>

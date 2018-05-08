@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js></script>
+<meta charset="ISO-8859-1">
+<title>Add Project</title>
+<script src="../controllers/projectcontroller.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body data-ng-app="myapp" data-ng-controller="MainCtrl" >
+
+<form name="form">
+<h1>Add Your Project!</h1>
+	<fieldset>
+        
+          <label for="ProjectName">Project Name</label><br>
+            <input type="text" name="ProjectName" id="projectname" data-ng-model="projectname" required />
+            <span data-ng-show="form.ProjectName.$dirty && form.ProjectName.$error.required" ></span>
+            
+            
+          <label for="Author">Author</label><br>
+            <input type="text" name="Author" data-ng-model="author" required />
+            <span data-ng-show="form.Author.$dirty && form.Author.$error.required" ></span>
+       
+          <label for="Contact">Contact</label><br>
+            <input type="number" name="Contact" data-ng-model="contact" required />
+            <span data-ng-show="form.Contact.$dirty && form.Contact.$error.required" ></span>
+            
+          <label for="ViewedBy">Viewed By</label><br>
+            <input type="radio" data-ng-model="viewedby" value="public">Public
+            <input type="radio" data-ng-model="viewedby" value="private">Private
+            <span data-ng-show="form.viewedby.$dirty && form.viewedby.$error.required" ></span>
+        
+          <label for="Select Category">Select Category</label><br>
+        	<select data-ng-model="category">
+			<option value="Technical">Technical</option>
+			<option value="Non-Technical">Non-Technical</option>
+		  </select>
+		  
+		 
+         
+     </fieldset>
+       
+     <button type="submit"  data-ng-disabled="form.$invalid" data-ng-click="sendData()">Add project</button>
+     <button type="reset">Reset</button>
+         
+</form>
+<button class="button1" data-ng-click="onLogout()">LogOut</button>
+</body>
+</html>
+
+
